@@ -1,0 +1,13 @@
+(load "git@github.com:hellerve/log.git@master")
+
+(defmodule SimpleLog
+  (defn log [r]
+    (if (< @(LogRecord.level r) Log.INFO)
+      (IO.errorln &(LogRecord.str r))
+      (IO.println &(LogRecord.str r))))
+
+  (defn install [lvl]
+    (do
+      (Log.set-level lvl)
+      (Log.set-logger log)))
+)
