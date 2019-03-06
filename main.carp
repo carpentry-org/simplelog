@@ -1,10 +1,10 @@
-(load "git@github.com:hellerve/log.git@master")
+(load "git@github.com:carpentry-org/log.git@0.0.4")
 
 (defmodule SimpleLog
   (defn log [r]
     (if (< @(LogRecord.level r) Log.INFO)
-      (IO.errorln &(LogRecord.str r))
-      (IO.println &(LogRecord.str r))))
+        (IO.errorln &(LogRecord.pretty r))
+        (IO.println &(LogRecord.pretty r))))
 
   (defn install [lvl]
     (do

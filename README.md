@@ -6,7 +6,7 @@ exists. Prints either to `stdout` or to `stderr`, depending on the log level.
 ## Example
 
 ```clojure
-(load "git@github.com:carpentry-io/simplelog")
+(load "git@github.com:carpentry-org/simplelog@0.0.1")
 
 (defn main []
   (do
