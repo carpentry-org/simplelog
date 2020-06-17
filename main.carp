@@ -1,7 +1,7 @@
-(load "git@github.com:carpentry-org/log.git@0.0.4")
+(load "git@github.com:carpentry-org/log@0.1.0")
 
 (defmodule SimpleLog
-  (defn log [r]
+  (defn log- [r]
     (if (< @(LogRecord.level r) Log.INFO)
         (IO.errorln &(LogRecord.pretty r))
         (IO.println &(LogRecord.pretty r))))
@@ -9,5 +9,5 @@
   (defn install [lvl]
     (do
       (Log.set-level lvl)
-      (Log.set-logger log)))
+      (Log.set-logger log-)))
 )
