@@ -3,11 +3,7 @@
 (defmodule SimpleLog
   (defn log- [r]
     (if (< @(LogRecord.level r) Log.INFO)
-        (IO.errorln &(LogRecord.pretty r))
-        (IO.println &(LogRecord.pretty r))))
+      (IO.errorln &(LogRecord.pretty r))
+      (IO.println &(LogRecord.pretty r))))
 
-  (defn install [lvl]
-    (do
-      (Log.set-level lvl)
-      (Log.set-logger log-)))
-)
+  (defn install [lvl] (do (Log.set-level lvl) (Log.set-logger log-))))
